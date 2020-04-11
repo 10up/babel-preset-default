@@ -9,12 +9,6 @@ Babel preset for transforming JavaScript at 10up.
 npm install --save-dev @10up/babel-preset-env
 ```
 
-You also need to install `@babel/core` and `@babel/runtime`:
-
-```
-npm install --save @babel/core @babel/runtine
-```
-
 ## Usage
 
 Simply add `@10up/babel-preset-default` to your `.babelrc` file
