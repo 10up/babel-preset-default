@@ -34,14 +34,8 @@ This babel preset exposes a few options. The default options are listed below.
             "targets": [
                 "> 1%",
                 "ie >= 11",
-                "last 1 Android versions",
-                "last 1 ChromeAndroid versions",
-                "last 2 Chrome versions",
-                "last 2 Firefox versions",
-                "last 2 Safari versions",
-                "last 2 iOS versions",
-                "last 2 Edge versions",
-                "last 2 Opera versions",
+                "last 2 versions",
+                "Firefox ESR"
             ]
         }]
     ]
@@ -70,14 +64,8 @@ Let's you specify which browser's are support. By default, the following browser
 [
     "> 1%",
     "ie >= 11",
-    "last 1 Android versions",
-    "last 1 ChromeAndroid versions",
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari versions",
-    "last 2 iOS versions",
-    "last 2 Edge versions",
-    "last 2 Opera versions",
+    "last 2 versions",
+    "Firefox ESR"
 ]
 ```
 
