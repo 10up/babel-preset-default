@@ -58,7 +58,7 @@ You rarelly will need to change this setting, but in case you do, this option le
 
 #### options.targets
 
-Let's you specify which browser's are support. By default, the following browsers will be supported.
+Let's you specify which browser's are support. Set this option to `{}` if you want to leverage browserlist config sources (`.browserslistrc`). By default, the following browsers will be supported.
 
 ```json
 [
