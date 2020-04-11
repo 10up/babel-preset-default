@@ -64,7 +64,7 @@ When building WordPress Gutenberg blocks, you will need to set this option to `t
 
 #### options.debug
 
-Enables debug messages. Usefull to review what's preset and plugins babel is using.
+Enables debug messages. Usefull to review which presets and plugins babel is using.
 
 #### options.removePropTypes
 By default this babel preset will remove any prop-types declarations when building for production.
