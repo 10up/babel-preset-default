@@ -8,6 +8,11 @@
     "test": "jest",
     "test:update": "jest --updateSnapshot"
   },
+  "keywords": [
+		"10up",
+		"babel",
+		"preset"
+	],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/10up/babel-preset-default.git"
