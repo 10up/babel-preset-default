@@ -22,7 +22,7 @@ describe('Babel preset default', () => {
 		const output = babel.transform(input, {
 			configFile: false,
 			envName: 'production',
-			presets: [[babelPresetDefault, { react: true }]],
+			presets: [babelPresetDefault],
 		});
 
 		expect(output.code).toMatchSnapshot();
