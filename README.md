@@ -29,7 +29,6 @@ This babel preset exposes a few options. The default options are listed below.
         ["@10up/babel-preset-default", {
             "modules": "auto",
             "wordpress": false,
-            "react": true,
             "debug": false,
             "removePropTypes": {},
             "targets": [
@@ -52,18 +51,10 @@ This babel preset exposes a few options. The default options are listed below.
 #### options.modules
 It's the `@babel/preset-env` [modules](https://babeljs.io/docs/en/babel-preset-env#modules) setting. Default's to `auto` which will detect whether the "caller" (e.g webpack) has ES6 modules support and if so, will disable module transpilation (this is the desired behavior for tree-shaking for example);
 
-#### options.react
-When enabled will load `@babel/preset-react` adding support for transpilling react code. 
-
-*Note*: when settings this option to true, make sure to set `wordpress` to false.
-
 #### options.wordpress
-When enabled will load `@wordpress/babel-preset-default` instead of `@babel/preset-react`. 
-
-When building WordPress Gutenberg blocks, you will need to set this option to `true` and `react` to `false`.
+When enabled will load `@wordpress/babel-preset-default`. Required when building WordPress Gutenberg blocks.
 
 #### options.debug
-
 Enables debug messages. Usefull to review which presets and plugins babel is using.
 
 #### options.removePropTypes

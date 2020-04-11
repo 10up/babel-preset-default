@@ -17,7 +17,6 @@ module.exports = declare((api, options) => {
 	const {
 		modules = 'auto',
 		wordpress = false,
-		react = true,
 		debug = false,
 		removePropTypes = {},
 		targets = defaultTargets,
@@ -40,10 +39,7 @@ module.exports = declare((api, options) => {
 		],
 	];
 
-	// preset-react should only be added if @wordpress/default is not being used.
-	if (react && !wordpress) {
-		presets.push([require.resolve('@babel/preset-react'), { development }]);
-	}
+	presets.push([require.resolve('@babel/preset-react'), { development }]);
 
 	if (wordpress) {
 		presets.push(require.resolve('@wordpress/babel-preset-default'));
