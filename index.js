@@ -20,7 +20,7 @@ module.exports = declare((api, options) => {
 			{
 				debug,
 				useBuiltIns: 'usage',
-				corejs: 3,
+				corejs: { version: 3, proposals: true },
 				bugfixes: true,
 				modules,
 				targets,
@@ -49,7 +49,7 @@ module.exports = declare((api, options) => {
 				: null,
 			[
 				require.resolve('@babel/plugin-transform-runtime'),
-				{ useESModules: !modules, corejs: 3 },
+				{ useESModules: !modules, corejs: { version: 3, proposals: 3 } },
 			],
 		].filter(Boolean),
 	};

@@ -13,15 +13,15 @@ require(\\"core-js/modules/es.regexp.to-string\\");
 
 var _getIterator2 = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/get-iterator\\"));
 
-var _isArray = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/array/is-array\\"));
+var _isArray = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/array/is-array\\"));
 
 var _getIteratorMethod2 = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/get-iterator-method\\"));
 
-var _symbol = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/symbol\\"));
+var _symbol = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/symbol\\"));
 
-var _from = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/array/from\\"));
+var _from = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/array/from\\"));
 
-var _slice = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/instance/slice\\"));
+var _slice = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/instance/slice\\"));
 
 var _asyncToGenerator2 = _interopRequireDefault(require(\\"@babel/runtime-corejs3/helpers/asyncToGenerator\\"));
 
@@ -29,9 +29,9 @@ var _regenerator = _interopRequireDefault(require(\\"@babel/runtime-corejs3/rege
 
 require(\\"regenerator-runtime/runtime\\");
 
-var _setTimeout2 = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/set-timeout\\"));
+var _setTimeout2 = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/set-timeout\\"));
 
-var _promise = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/promise\\"));
+var _promise = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/promise\\"));
 
 function _createForOfIteratorHelper(o) { if (typeof _symbol.default === \\"undefined\\" || (0, _getIteratorMethod2.default)(o) == null) { if ((0, _isArray.default)(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\\"Invalid attempt to iterate non-iterable instance.\\\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\\"); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = (0, _getIterator2.default)(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
@@ -135,7 +135,7 @@ exports[`Babel preset default transpiles react code properly 1`] = `
 
 var _interopRequireDefault = require(\\"@babel/runtime-corejs3/helpers/interopRequireDefault\\");
 
-var _Object$defineProperty = require(\\"@babel/runtime-corejs3/core-js-stable/object/define-property\\");
+var _Object$defineProperty = require(\\"@babel/runtime-corejs3/core-js/object/define-property\\");
 
 require(\\"core-js/modules/es.symbol\\");
 
@@ -151,7 +151,7 @@ _Object$defineProperty(exports, \\"__esModule\\", {
 
 exports.default = void 0;
 
-var _construct = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/reflect/construct\\"));
+var _construct = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/reflect/construct\\"));
 
 var _classCallCheck2 = _interopRequireDefault(require(\\"@babel/runtime-corejs3/helpers/classCallCheck\\"));
 
@@ -223,7 +223,7 @@ exports[`Babel preset default transpiles without removing proptypes in dev mode 
 
 var _interopRequireDefault = require(\\"@babel/runtime-corejs3/helpers/interopRequireDefault\\");
 
-var _Object$defineProperty = require(\\"@babel/runtime-corejs3/core-js-stable/object/define-property\\");
+var _Object$defineProperty = require(\\"@babel/runtime-corejs3/core-js/object/define-property\\");
 
 require(\\"core-js/modules/es.symbol\\");
 
@@ -239,7 +239,7 @@ _Object$defineProperty(exports, \\"__esModule\\", {
 
 exports.default = void 0;
 
-var _construct = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/reflect/construct\\"));
+var _construct = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/reflect/construct\\"));
 
 var _classCallCheck2 = _interopRequireDefault(require(\\"@babel/runtime-corejs3/helpers/classCallCheck\\"));
 
@@ -363,16 +363,16 @@ exports[`Babel preset default transpiles without transforming es6 imports 1`] = 
 import \\"core-js/modules/es.object.to-string\\";
 import \\"core-js/modules/es.regexp.to-string\\";
 import _getIterator from \\"@babel/runtime-corejs3/core-js/get-iterator\\";
-import _Array$isArray from \\"@babel/runtime-corejs3/core-js-stable/array/is-array\\";
+import _Array$isArray from \\"@babel/runtime-corejs3/core-js/array/is-array\\";
 import _getIteratorMethod from \\"@babel/runtime-corejs3/core-js/get-iterator-method\\";
-import _Symbol from \\"@babel/runtime-corejs3/core-js-stable/symbol\\";
-import _Array$from from \\"@babel/runtime-corejs3/core-js-stable/array/from\\";
-import _sliceInstanceProperty from \\"@babel/runtime-corejs3/core-js-stable/instance/slice\\";
+import _Symbol from \\"@babel/runtime-corejs3/core-js/symbol\\";
+import _Array$from from \\"@babel/runtime-corejs3/core-js/array/from\\";
+import _sliceInstanceProperty from \\"@babel/runtime-corejs3/core-js/instance/slice\\";
 import _asyncToGenerator from \\"@babel/runtime-corejs3/helpers/esm/asyncToGenerator\\";
 import _regeneratorRuntime from \\"@babel/runtime-corejs3/regenerator\\";
 import \\"regenerator-runtime/runtime\\";
-import _setTimeout from \\"@babel/runtime-corejs3/core-js-stable/set-timeout\\";
-import _Promise from \\"@babel/runtime-corejs3/core-js-stable/promise\\";
+import _setTimeout from \\"@babel/runtime-corejs3/core-js/set-timeout\\";
+import _Promise from \\"@babel/runtime-corejs3/core-js/promise\\";
 
 function _createForOfIteratorHelper(o) { if (typeof _Symbol === \\"undefined\\" || _getIteratorMethod(o) == null) { if (_Array$isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\\"Invalid attempt to iterate non-iterable instance.\\\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\\"); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = _getIterator(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
@@ -476,7 +476,7 @@ exports[`Babel preset default transpiles wordpress code properly 1`] = `
 
 var _interopRequireDefault = require(\\"@babel/runtime/helpers/interopRequireDefault\\");
 
-var _Object$defineProperty = require(\\"@babel/runtime-corejs3/core-js-stable/object/define-property\\");
+var _Object$defineProperty = require(\\"@babel/runtime-corejs3/core-js/object/define-property\\");
 
 require(\\"core-js/modules/es.symbol\\");
 
@@ -494,7 +494,7 @@ exports.default = void 0;
 
 var _element = require(\\"@wordpress/element\\");
 
-var _construct = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js-stable/reflect/construct\\"));
+var _construct = _interopRequireDefault(require(\\"@babel/runtime-corejs3/core-js/reflect/construct\\"));
 
 var _classCallCheck2 = _interopRequireDefault(require(\\"@babel/runtime/helpers/classCallCheck\\"));
 
