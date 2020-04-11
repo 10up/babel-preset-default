@@ -52,4 +52,16 @@ describe('Babel preset default', () => {
 
 		expect(output.code).toMatchSnapshot();
 	});
+
+	test('transpiles without removing proptypes in dev mode', () => {
+		const input = fs.readFileSync(path.join(__dirname, '../fixtures/react.js'));
+
+		const output = babel.transform(input, {
+			configFile: false,
+			envName: 'development',
+			presets: [[babelPresetDefault]],
+		});
+
+		expect(output.code).toMatchSnapshot();
+	});
 });

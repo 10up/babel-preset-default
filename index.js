@@ -24,9 +24,7 @@ module.exports = declare((api, options) => {
 	} = options;
 
 	const development =
-		typeof options.development === 'boolean'
-			? options.development
-			: api.cache.using(() => process.env.NODE_ENV === 'development');
+		typeof options.development === 'boolean' ? options.development : api.env(['development']);
 
 	const presets = [
 		[
@@ -54,18 +52,20 @@ module.exports = declare((api, options) => {
 	return {
 		presets,
 		plugins: [
-			[
-				require.resolve('babel-plugin-transform-react-remove-prop-types'),
-				{
-					mode: 'remove',
-					removeImport: true,
-					...removePropTypes,
-				},
-			],
+			!development
+				? [
+						require.resolve('babel-plugin-transform-react-remove-prop-types'),
+						{
+							mode: 'remove',
+							removeImport: true,
+							...removePropTypes,
+						},
+				  ]
+				: null,
 			[
 				require.resolve('@babel/plugin-transform-runtime'),
 				{ useESModules: !modules, corejs: 3 },
 			],
-		],
+		].filter(Boolean),
 	};
 });
