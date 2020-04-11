@@ -218,6 +218,119 @@ var _default = Component;
 exports.default = _default;"
 `;
 
+exports[`Babel preset default transpiles without transforming es6 imports 1`] = `
+"import \\"core-js/modules/es.function.name\\";
+import \\"core-js/modules/es.object.to-string\\";
+import \\"core-js/modules/es.regexp.to-string\\";
+import _getIterator from \\"@babel/runtime-corejs3/core-js/get-iterator\\";
+import _Array$isArray from \\"@babel/runtime-corejs3/core-js-stable/array/is-array\\";
+import _getIteratorMethod from \\"@babel/runtime-corejs3/core-js/get-iterator-method\\";
+import _Symbol from \\"@babel/runtime-corejs3/core-js-stable/symbol\\";
+import _Array$from from \\"@babel/runtime-corejs3/core-js-stable/array/from\\";
+import _sliceInstanceProperty from \\"@babel/runtime-corejs3/core-js-stable/instance/slice\\";
+import _asyncToGenerator from \\"@babel/runtime-corejs3/helpers/esm/asyncToGenerator\\";
+import _regeneratorRuntime from \\"@babel/runtime-corejs3/regenerator\\";
+import \\"regenerator-runtime/runtime\\";
+import _setTimeout from \\"@babel/runtime-corejs3/core-js-stable/set-timeout\\";
+import _Promise from \\"@babel/runtime-corejs3/core-js-stable/promise\\";
+
+function _createForOfIteratorHelper(o) { if (typeof _Symbol === \\"undefined\\" || _getIteratorMethod(o) == null) { if (_Array$isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\\"Invalid attempt to iterate non-iterable instance.\\\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\\"); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = _getIterator(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { var _context3; if (!o) return; if (typeof o === \\"string\\") return _arrayLikeToArray(o, minLen); var n = _sliceInstanceProperty(_context3 = Object.prototype.toString.call(o)).call(_context3, 8, -1); if (n === \\"Object\\" && o.constructor) n = o.constructor.name; if (n === \\"Map\\" || n === \\"Set\\") return _Array$from(n); if (n === \\"Arguments\\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var _marked = /*#__PURE__*/_regeneratorRuntime.mark(generator);
+
+var constVar = 'someConstVar';
+var promise = new _Promise(function (resolve) {
+  _setTimeout(function () {
+    resolve(\\"Resolving \\".concat(constVar));
+  }, 100);
+});
+
+function generator() {
+  return _regeneratorRuntime.wrap(function generator$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return 1;
+
+        case 2:
+          _context.next = 4;
+          return 2;
+
+        case 4:
+          _context.next = 6;
+          return 3;
+
+        case 6:
+        case \\"end\\":
+          return _context.stop();
+      }
+    }
+  }, _marked);
+}
+
+var object = {
+  a: {
+    b: 'b'
+  },
+  b: {
+    a: 'a'
+  }
+};
+
+var init = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee() {
+    var _object$a;
+
+    var result, _iterator, _step, a;
+
+    return _regeneratorRuntime.wrap(function _callee$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return promise();
+
+          case 2:
+            result = _context2.sent;
+            _iterator = _createForOfIteratorHelper(generator());
+
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                a = _step.value;
+                console.log(a);
+              }
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
+
+            console.log(object === null || object === void 0 ? void 0 : (_object$a = object.a) === null || _object$a === void 0 ? void 0 : _object$a.b);
+            return _context2.abrupt(\\"return\\", result);
+
+          case 7:
+          case \\"end\\":
+            return _context2.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function init() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+init().then(function (result) {
+  console.log(result);
+});"
+`;
+
 exports[`Babel preset default transpiles wordpress code properly 1`] = `
 "\\"use strict\\";
 

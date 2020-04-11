@@ -39,4 +39,17 @@ describe('Babel preset default', () => {
 
 		expect(output.code).toMatchSnapshot();
 	});
+
+	// Babel will automatically set modules to false when called by Webpack.
+	test('transpiles without transforming es6 imports', () => {
+		const input = fs.readFileSync(path.join(__dirname, '../fixtures/es6+.js'));
+
+		const output = babel.transform(input, {
+			configFile: false,
+			envName: 'production',
+			presets: [[babelPresetDefault, { modules: false }]],
+		});
+
+		expect(output.code).toMatchSnapshot();
+	});
 });
