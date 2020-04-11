@@ -1,4 +1,4 @@
-import { declare } from '@babel/helper-plugin-utils';
+const { declare } = require('@babel/helper-plugin-utils');
 
 const defaultTargets = [
 	'> 1%',
@@ -13,14 +13,14 @@ const defaultTargets = [
 	'last 2 Opera versions',
 ];
 
-export default declare((api, options) => {
+module.exports = declare((api, options) => {
 	const {
 		modules = 'auto',
 		wordpress = false,
 		react = true,
 		debug = false,
 		removePropTypes = {},
-		targets = {},
+		targets = defaultTargets,
 	} = options;
 
 	const development =
@@ -37,21 +37,18 @@ export default declare((api, options) => {
 				corejs: 3,
 				bugfixes: true,
 				modules,
-				targets: {
-					...defaultTargets,
-					...targets,
-				},
+				targets,
 			},
 		],
 	];
 
 	// preset-react should only be added if @wordpress/default is not being used.
 	if (react && !wordpress) {
-		presets.push([[require.resolve('@babel/preset-react'), { development }]]);
+		presets.push([require.resolve('@babel/preset-react'), { development }]);
 	}
 
 	if (wordpress) {
-		presets.push(require.resolve('@wordpress/default'));
+		presets.push(require.resolve('@wordpress/babel-preset-default'));
 	}
 
 	return {
@@ -62,15 +59,12 @@ export default declare((api, options) => {
 				{
 					mode: 'remove',
 					removeImport: true,
-					ignoreFilenames: ['node_modules'],
 					...removePropTypes,
 				},
 			],
 			[
-				[
-					require.resolve('@babel/plugin-transform-runtime'),
-					{ useESModules: !modules, corejs: 3 },
-				],
+				require.resolve('@babel/plugin-transform-runtime'),
+				{ useESModules: !modules, corejs: 3 },
 			],
 		],
 	};
