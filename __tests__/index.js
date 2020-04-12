@@ -4,10 +4,11 @@ const babel = require('@babel/core');
 const babelPresetDefault = require('../index');
 
 describe('Babel preset default', () => {
-	test('transpiles ES6+ code properly', () => {
-		const input = fs.readFileSync(path.join(__dirname, '../fixtures/es6+.js'));
+	const es6Input = fs.readFileSync(path.join(__dirname, '../fixtures/es6+.js'));
+	const reactInput = fs.readFileSync(path.join(__dirname, '../fixtures/react.js'));
 
-		const output = babel.transform(input, {
+	test('transpiles ES6+ code properly', () => {
+		const output = babel.transform(es6Input, {
 			configFile: false,
 			envName: 'production',
 			presets: [babelPresetDefault],
@@ -16,10 +17,18 @@ describe('Babel preset default', () => {
 		expect(output.code).toMatchSnapshot();
 	});
 
-	test('transpiles react code properly', () => {
-		const input = fs.readFileSync(path.join(__dirname, '../fixtures/react.js'));
+	test('transpiles ES6+ code properly with runtimeESModules set to true', () => {
+		const output = babel.transform(es6Input, {
+			configFile: false,
+			envName: 'production',
+			presets: [[babelPresetDefault, { runtimeESModules: true }]],
+		});
 
-		const output = babel.transform(input, {
+		expect(output.code).toMatchSnapshot();
+	});
+
+	test('transpiles react code properly', () => {
+		const output = babel.transform(reactInput, {
 			configFile: false,
 			envName: 'production',
 			presets: [babelPresetDefault],
@@ -29,9 +38,7 @@ describe('Babel preset default', () => {
 	});
 
 	test('transpiles wordpress code properly', () => {
-		const input = fs.readFileSync(path.join(__dirname, '../fixtures/react.js'));
-
-		const output = babel.transform(input, {
+		const output = babel.transform(reactInput, {
 			configFile: false,
 			envName: 'production',
 			presets: [[babelPresetDefault, { wordpress: true }]],
@@ -42,9 +49,7 @@ describe('Babel preset default', () => {
 
 	// Babel will automatically set modules to false when called by Webpack.
 	test('transpiles without transforming es6 imports', () => {
-		const input = fs.readFileSync(path.join(__dirname, '../fixtures/es6+.js'));
-
-		const output = babel.transform(input, {
+		const output = babel.transform(es6Input, {
 			configFile: false,
 			envName: 'production',
 			presets: [[babelPresetDefault, { modules: false }]],
@@ -54,9 +59,7 @@ describe('Babel preset default', () => {
 	});
 
 	test('transpiles without removing proptypes in dev mode', () => {
-		const input = fs.readFileSync(path.join(__dirname, '../fixtures/react.js'));
-
-		const output = babel.transform(input, {
+		const output = babel.transform(reactInput, {
 			configFile: false,
 			envName: 'development',
 			presets: [[babelPresetDefault]],

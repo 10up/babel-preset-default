@@ -13,7 +13,8 @@ module.exports = declare((api, options) => {
 
 	const development =
 		typeof options.development === 'boolean' ? options.development : api.env(['development']);
-
+	const runtimeESModules =
+		typeof options.runtimeESModules === 'boolean' ? options.runtimeESModules : !modules;
 	const presets = [
 		[
 			require.resolve('@babel/preset-env'),
@@ -49,7 +50,7 @@ module.exports = declare((api, options) => {
 				: null,
 			[
 				require.resolve('@babel/plugin-transform-runtime'),
-				{ useESModules: !modules, corejs: { version: 3, proposals: 3 } },
+				{ useESModules: runtimeESModules, corejs: { version: 3, proposals: 3 } },
 			],
 		].filter(Boolean),
 	};
