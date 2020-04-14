@@ -50,7 +50,7 @@ module.exports = declare((api, options) => {
 				: null,
 			[
 				require.resolve('@babel/plugin-transform-runtime'),
-				{ useESModules: runtimeESModules, corejs: { version: 3, proposals: 3 } },
+				{ useESModules: runtimeESModules, corejs: { version: 3, proposals: true } },
 			],
 		].filter(Boolean),
 	};
