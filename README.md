@@ -6,7 +6,7 @@ Babel preset for transforming JavaScript at 10up.
 ## Instalation
 
 ```sh
-npm install --save-dev @10up/babel-preset-env
+npm install --save-dev @10up/babel-preset-default
 ```
 
 ## Usage
