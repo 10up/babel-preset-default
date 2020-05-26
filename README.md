@@ -47,13 +47,6 @@ This babel preset exposes a few options. The default options are listed below.
 #### options.modules
 It's the `@babel/preset-env` [modules](https://babeljs.io/docs/en/babel-preset-env#modules) setting. Default's to `auto` which will detect whether the "caller" (e.g webpack) has ES6 modules support and if so, will disable module transpilation (this is the desired behavior for tree-shaking for example);
 
-#### options.runtimeESModules
-This options defaults to `true` if `modules` is `false` and defaults to `false` otherwise.
-
-Enabling this option will prevent transformation of runtime helpers to CommonJS modules. If you're using webpack or any other bundle that supports ES6 modules, you most likely don't need to transpile modules. We recommend setting this option to `true`.
-
-
-
 #### options.wordpress
 When enabled will load `@wordpress/babel-preset-default`. Required when building WordPress Gutenberg blocks.
 
