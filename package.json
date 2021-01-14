@@ -22,17 +22,17 @@
   },
   "homepage": "https://github.com/10up/babel-preset-default#readme",
   "dependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/runtime": "^7.9.2",
-    "@babel/helper-plugin-utils": "^7.8.3",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/core": "^7.12.10",
+    "@babel/runtime": "^7.12.5",
+    "@babel/helper-plugin-utils": "^7.10.4",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
     "@wordpress/babel-preset-default": "^4.11.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "core-js": "^3.6.5"
+    "core-js": "^3.8.2"
   },
   "devDependencies": {
-    "@10up/eslint-config": "^2.0.3-next",
+    "@10up/eslint-config": "^2.1.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.3.0",
     "eslint": "^6.8.0",
