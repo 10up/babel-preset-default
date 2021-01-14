@@ -236,9 +236,7 @@ exports.default = void 0;
 
 var _jsxRuntime = require(\\"react/jsx-runtime\\");
 
-var _react = _interopRequireDefault(require(\\"react\\"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = require(\\"react\\");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
 
@@ -260,8 +258,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === \\"undefined\\" ||
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-// eslint-disable-line
-var Component = function Component(_ref) {
+// eslint-disable-line import/no-extraneous-dependencies
+var FCComponent = function FCComponent(_ref) {
   var title = _ref.title,
       url = _ref.url,
       description = _ref.description;
@@ -279,14 +277,14 @@ var Component = function Component(_ref) {
   });
 };
 
-Component.defaultProps = {
+FCComponent.defaultProps = {
   title: '',
   url: '',
   description: ''
 };
 
-var ClassComponent = /*#__PURE__*/function (_React$Component) {
-  _inherits(ClassComponent, _React$Component);
+var ClassComponent = /*#__PURE__*/function (_Component) {
+  _inherits(ClassComponent, _Component);
 
   var _super = _createSuper(ClassComponent);
 
@@ -314,9 +312,9 @@ var ClassComponent = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return ClassComponent;
-}(_react.default.Component);
+}(_react.Component);
 
-var _default = Component;
+var _default = FCComponent;
 exports.default = _default;"
 `;
 
@@ -336,7 +334,7 @@ exports.default = void 0;
 
 var _jsxDevRuntime = require(\\"react/jsx-dev-runtime\\");
 
-var _react = _interopRequireDefault(require(\\"react\\"));
+var _react = require(\\"react\\");
 
 var _propTypes = _interopRequireDefault(require(\\"prop-types\\"));
 
@@ -365,8 +363,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === \\"undefined\\" ||
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-// eslint-disable-line
-var Component = function Component(_ref) {
+// eslint-disable-line import/no-extraneous-dependencies
+var FCComponent = function FCComponent(_ref) {
   var title = _ref.title,
       url = _ref.url,
       description = _ref.description;
@@ -400,19 +398,19 @@ var Component = function Component(_ref) {
   }, _this);
 };
 
-Component.propTypes = {
+FCComponent.propTypes = {
   title: _propTypes.default.string,
   url: _propTypes.default.string,
   description: _propTypes.default.string
 };
-Component.defaultProps = {
+FCComponent.defaultProps = {
   title: '',
   url: '',
   description: ''
 };
 
-var ClassComponent = /*#__PURE__*/function (_React$Component) {
-  _inherits(ClassComponent, _React$Component);
+var ClassComponent = /*#__PURE__*/function (_Component) {
+  _inherits(ClassComponent, _Component);
 
   var _super = _createSuper(ClassComponent);
 
@@ -448,12 +446,12 @@ var ClassComponent = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return ClassComponent;
-}(_react.default.Component);
+}(_react.Component);
 
 ClassComponent.propTypes = {
   title: _propTypes.default.string.isRequired
 };
-var _default = Component;
+var _default = FCComponent;
 exports.default = _default;"
 `;
 
@@ -589,14 +587,14 @@ var _possibleConstructorReturn2 = _interopRequireDefault(require(\\"@babel/runti
 
 var _getPrototypeOf2 = _interopRequireDefault(require(\\"@babel/runtime/helpers/getPrototypeOf\\"));
 
-var _react = _interopRequireDefault(require(\\"react\\"));
+var _react = require(\\"react\\");
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === \\"undefined\\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \\"function\\") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
-// eslint-disable-line
-var Component = function Component(_ref) {
+// eslint-disable-line import/no-extraneous-dependencies
+var FCComponent = function FCComponent(_ref) {
   var title = _ref.title,
       url = _ref.url,
       description = _ref.description;
@@ -608,14 +606,14 @@ var Component = function Component(_ref) {
   }, (0, _element.createElement)(\\"h1\\", null, title)), (0, _element.createElement)(\\"p\\", null, description));
 };
 
-Component.defaultProps = {
+FCComponent.defaultProps = {
   title: '',
   url: '',
   description: ''
 };
 
-var ClassComponent = /*#__PURE__*/function (_React$Component) {
-  (0, _inherits2.default)(ClassComponent, _React$Component);
+var ClassComponent = /*#__PURE__*/function (_Component) {
+  (0, _inherits2.default)(ClassComponent, _Component);
 
   var _super = _createSuper(ClassComponent);
 
@@ -638,8 +636,8 @@ var ClassComponent = /*#__PURE__*/function (_React$Component) {
     }
   }]);
   return ClassComponent;
-}(_react.default.Component);
+}(_react.Component);
 
-var _default = Component;
+var _default = FCComponent;
 exports.default = _default;"
 `;
