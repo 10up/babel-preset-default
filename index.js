@@ -28,7 +28,7 @@ module.exports = declare((api, options) => {
 		],
 	];
 
-	presets.push([require.resolve('@babel/preset-react'), { development }]);
+	presets.push([require.resolve('@babel/preset-react'), { development, runtime: 'automatic' }]);
 
 	if (wordpress) {
 		presets.push(require.resolve('@wordpress/babel-preset-default'));
