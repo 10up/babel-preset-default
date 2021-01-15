@@ -11,6 +11,15 @@ module.exports = declare((api, options) => {
 		targets = defaultTargets,
 	} = options;
 
+	const hasJsxRuntime = (() => {
+		try {
+			require.resolve('react/jsx-runtime.js');
+			return true;
+		} catch (e) {
+			return false;
+		}
+	})();
+
 	const development =
 		typeof options.development === 'boolean' ? options.development : api.env(['development']);
 
@@ -28,7 +37,10 @@ module.exports = declare((api, options) => {
 		],
 	];
 
-	presets.push([require.resolve('@babel/preset-react'), { development, runtime: 'automatic' }]);
+	presets.push([
+		require.resolve('@babel/preset-react'),
+		{ development, runtime: hasJsxRuntime && !wordpress ? 'automatic' : 'classic' },
+	]);
 
 	if (wordpress) {
 		presets.push(require.resolve('@wordpress/babel-preset-default'));
