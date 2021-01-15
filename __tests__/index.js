@@ -4,8 +4,8 @@ const babel = require('@babel/core');
 const babelPresetDefault = require('../index');
 
 const nodeModulesPath = path.join(__dirname, '../node_modules');
-const fakeReactPath = path.join(nodeModulesPath, 'react');
-console.log(nodeModulesPath, fakeReactPath);
+const reactPath = path.join(nodeModulesPath, 'react');
+
 const es6Input = fs.readFileSync(path.join(__dirname, '../fixtures/es6+.js'));
 const reactInput = fs.readFileSync(path.join(__dirname, '../fixtures/react.js'));
 
@@ -74,12 +74,11 @@ describe('Babel preset default', () => {
 
 describe('Babel preset default with automatic runtime', () => {
 	beforeEach(() => {
-		// fs.mkdirSync(fakeReactPath);
-		fs.writeFileSync(path.join(fakeReactPath, 'jsx-runtime.js'), 'export default () => {};');
+		fs.writeFileSync(path.join(reactPath, 'jsx-runtime.js'), 'export default () => {};');
 	});
 
 	afterEach(() => {
-		fs.unlinkSync(path.join(fakeReactPath, 'jsx-runtime.js'));
+		fs.unlinkSync(path.join(reactPath, 'jsx-runtime.js'));
 	});
 
 	test('transpiles react code properly with automatic runtime', () => {
