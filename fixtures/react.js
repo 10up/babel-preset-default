@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line
-import PropTypes from 'prop-types'; // eslint-disable-line
+import { Component } from 'react'; // eslint-disable-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 
-const Component = ({ title, url, description }) => (
+const FCComponent = ({ title, url, description }) => (
 	<div className="component-test-babel">
 		<a href={url} title={title}>
 			<h1>{title}</h1>
@@ -10,19 +10,19 @@ const Component = ({ title, url, description }) => (
 	</div>
 );
 
-Component.propTypes = {
+FCComponent.propTypes = {
 	title: PropTypes.string,
 	url: PropTypes.string,
 	description: PropTypes.string,
 };
 
-Component.defaultProps = {
+FCComponent.defaultProps = {
 	title: '',
 	url: '',
 	description: '',
 };
 
-class ClassComponent extends React.Component {
+class ClassComponent extends Component {
 	componentDidMount() {
 		// doing something
 	}
@@ -41,4 +41,4 @@ ClassComponent.propTypes = {
 	title: PropTypes.string.isRequired,
 };
 
-export default Component;
+export default FCComponent;
