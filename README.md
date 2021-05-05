@@ -1,4 +1,7 @@
 # 10up babel preset
+
+**DEPRECATED.** Please go to https://github.com/10up/10up-toolkit
+
 Babel preset for transforming JavaScript at 10up.
 
 [![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level)
